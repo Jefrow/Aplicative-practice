@@ -10,6 +10,7 @@ export function getPlanetNames(data) {
   let planetNames = planets.map((planet) => {
     return planet.name;
   })
+  
   return planetNames;
 }
 

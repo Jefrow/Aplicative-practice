@@ -10,8 +10,8 @@ export function allPlanetsMoonsCount(data) {
   const planets = data.planets; 
   const initialValue = 0; 
 
-  const planetMoons = planets.filter(el => {
-    return el.moonsCount
+  const planetMoons = planets.filter(planet => {
+    return planet.moonsCount
   }).map(el => {
     return el.moonsCount; 
   })

@@ -1,42 +1,20 @@
 export function minBy(array, cb) {
-
-  let newArray = ageArray(array);
-
-  function ageArray(array) {
-    const ages = array.map((el) => {
-      return cb(el);
-    })
-    return ages; 
-  }
-
-  let min = Math.min(...newArray)
-
-  for (let el of array) {
-    if (cb(el) === min) {
-      return el;
+  let min = array[0]; 
+  for (let elm of array){
+    if(cb(elm) < cb(min)){
+      min = elm
     }
-  } 
-
+  }
+  return min
 }
 
 export function maxBy(array, cb) {
-  
-  let newArray = ageArray(array);
-
-  function ageArray(array) {
-    const ages = array.map((el) => {
-      return cb(el);
-    })
-    return ages; 
-  }
-
-  let max = Math.max(...newArray)
-
-  for (let el of array) {
-    if (cb(el) === max) {
-      return el;
+  let max = array[0]; 
+  for(let elm of array){
+    if(cb(elm) > cb(max)){
+      max = elm
     }
   }
-
+  return max
 }
 
